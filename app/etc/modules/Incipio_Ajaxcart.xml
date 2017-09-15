@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Incipio_Ajaxcart>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Incipio_Ajaxcart>
+    </modules>
+</config>

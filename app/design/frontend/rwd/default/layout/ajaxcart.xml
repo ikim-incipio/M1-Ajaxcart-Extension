@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<layout>
+	<!-- <default>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>ajaxcart</name></action>
+		</reference>
+			</
+	</default> -->
+	<product_list>
+        <reference name="head">
+            <action method="removeItem">
+                <type>skin_js</type>
+                <name>js/configurableswatches/product-media.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>ajaxcart/product-media-ajax.js</name>
+            </action>
+            <!-- <action method="removeItem">
+                <type>skin_js</type>
+                <name>js/configurableswatches/swatches-list.js</name>
+            </action> -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>ajaxcart/swatches-list-ajax.js</name>
+            </action>
+        </reference>
+		<reference name="product_list.swatches">
+			<action method="setTemplate"><template>ajaxcart/configurableswatches/catalog/product/list/swatches.phtml</template></action>
+		</reference>
+	</product_list>
+	<catalog_category_default translate="label">
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>ajaxcart/ajaxcart.js</name>
+			</action>
+			<action method="addJs">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>calendar/calendar-win2k-1.css</name>
+                <params/>
+                <!--<if/><condition>can_load_calendar_js</condition>-->
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar.js</name>
+                <!--<params/><if/><condition>can_load_calendar_js</condition>-->
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar-setup.js</name>
+                <!--<params/><if/><condition>can_load_calendar_js</condition>-->
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/configurableswatches/swatches-product.js</name>
+            </action>
+		</reference>
+		<reference name="product_list">
+            <action method="setTemplate"><template>ajaxcart/catalog/product/list.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="ajax_utility" as="ajax_utility" template="ajaxcart/utility.phtml" />
+        </reference>
+	</catalog_category_default>
+	<catalog_category_layered translate="label">
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>ajaxcart/ajaxcart.js</name>
+			</action>
+			<action method="addJs">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>calendar/calendar-win2k-1.css</name>
+                <params/>
+                <!--<if/><condition>can_load_calendar_js</condition>-->
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar.js</name>
+                <!--<params/><if/><condition>can_load_calendar_js</condition>-->
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar-setup.js</name>
+                <!--<params/><if/><condition>can_load_calendar_js</condition>-->
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/configurableswatches/swatches-product.js</name>
+            </action>
+            <!-- <action method="removeItem">
+            	<type>skin_js</type>
+            	<name>js/configurableswatches/configurable-swatch-prices.js</name>
+            </action>
+            <action method="removeItem">
+            	<type>skin_js</type>
+            	<name>js/configurableswatches/swatches-list.js</name>
+            </action> -->
+		</reference>
+        <reference name="product_list">
+            <action method="setTemplate"><template>ajaxcart/catalog/product/list.phtml</template></action>
+        </reference>
+        <reference name="content">
+        	<block type="core/template" name="ajax_utility" as="ajax_utility" template="ajaxcart/utility.phtml" />
+        </reference>
+    </catalog_category_layered>
+</layout>
