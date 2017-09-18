@@ -26,6 +26,10 @@ Notes
 Changelog
 ---------
 
+### 1.0.1 [2017-09-18]
+
+* added css
+
 ### 1.0.0 [2017-09-18]
 
 * fully working extension release
