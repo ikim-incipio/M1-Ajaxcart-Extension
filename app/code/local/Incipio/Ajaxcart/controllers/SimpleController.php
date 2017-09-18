@@ -1,6 +1,6 @@
 <?php
 require_once 'Mage/Checkout/controllers/CartController.php';
-class Incipio_Ajaxcart_IndexController extends Mage_Checkout_CartController
+class Incipio_Ajaxcart_SimpleController extends Mage_Checkout_CartController
 {
 	public function indexAction()
 	{
@@ -24,7 +24,6 @@ class Incipio_Ajaxcart_IndexController extends Mage_Checkout_CartController
 	        $additional = array(
 	        	'product' => $params['product'],
 	        	'qty' => $params['qty'],
-	        	'super_attribute' => $options
 	        );
 
 	        try {
@@ -55,7 +54,7 @@ class Incipio_Ajaxcart_IndexController extends Mage_Checkout_CartController
 		    }
 
 		    $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
-		    
+	        
 	        return;
         } else {
         	return;

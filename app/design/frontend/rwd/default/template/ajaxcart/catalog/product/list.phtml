@@ -86,10 +86,16 @@
                         <?php echo $this->getPriceHtml($_product, true) ?>
                     </div>
                     <div class="product-secondary">
+                            <!-- added by Isaac on 9-18-2017 - added qty field for category list -->
+                            <div class="qty-wrapper">
+                                <label for="qty"><?php echo $this->__('Qty:') ?></label>
+                                <input type="text" pattern="\d*(\.\d+)?" name="qty" maxlength="12" value="1" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
+                            </div>
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                            <p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
+                            <p class="action"><a title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" href="<?php echo $this->getAddToCartUrl($_product) ?>"><?php echo $this->__('Add to Cart') ?></a></p>
+                            <!-- <p class="action"><button type="button" title="<?php //echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php //echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php //echo $this->__('Add to Cart') ?></span></span></button></p> -->
                         <?php elseif($_product->canConfigure() && $_product->isSaleable()): ?>
-                            <a title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-popup config" href="<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>"><?php echo $this->__('Add to Cart') ?></a>
+                            <p class="action"><a title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-popup config" href="<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>"><?php echo $this->__('Add to Cart') ?></a></p>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <p class="action"><a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
                         <?php else: ?>
@@ -150,9 +156,15 @@
                     <?php if($_product->getRatingSummary()): ?>
                     <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                     <?php endif; ?>
+                    <!-- added by Isaac on 9-18-2017 - added qty field for category list -->
+                    <div class="qty-wrapper">
+                        <label for="qty"><?php echo $this->__('Qty:') ?></label>
+                        <input type="text" pattern="\d*(\.\d+)?" name="qty" maxlength="12" value="1" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
+                    </div>
                     <div class="actions">
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                            <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <a title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" href="<?php echo $this->getAddToCartUrl($_product) ?>"><?php echo $this->__('Add to Cart') ?></a>
+                            <!-- <button type="button" title="<?php //echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php //echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php //echo $this->__('Add to Cart') ?></span></span></button> -->
                         <?php elseif($_product->canConfigure() && $_product->isSaleable()): ?>
                             <a title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-popup config" href="<?php echo $this->helper('checkout/cart')->getAddUrl($_product) ?>"><?php echo $this->__('Add to Cart') ?></a>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
