@@ -5,17 +5,6 @@
 			<version>1.0.1</version>
 		</Incipio_Ajaxcart>
 	</modules>
-	<!-- <global>
-		<blocks>
-			<ajaxcart>
-				<class>Incipio_Ajaxcart_Block</class>
-			</ajaxcart>
-			<category>
-				<rewrite>
-				</rewrite>
-			</category>
-		</blocks>
-	</global> -->
 	<frontend>
 		<routers>
 			<routeurfrontend>
