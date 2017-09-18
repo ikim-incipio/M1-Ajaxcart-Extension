@@ -7,11 +7,9 @@ jQuery(document).on('click', '.button.btn-popup.config', function(e){
 		var html = jQuery(this).parent().parent().parent().parent().html();
 	}
 
-	html = html.replace('class="button btn-popup config"', 'class="button btn-ajaxcart config"');
-	html = html.replace('product-collection-image-', 'product-collection-image-ajax-')
-	html = html.replace('<ul class="configurable-swatch-list', '<ul class="configurable-swatch-list-ajax')
-	// imageHtml = html.substring(0, html.indexOf('<div class="product-info"'));
-	// infoHtml = html.substring(html.indexOf('<div class="product-info"'), html.length);
+	html = html.replace(/class="button btn-popup config"/, 'class="button btn-ajaxcart config"');
+	html = html.replace(/product-collection-image-/g, 'product-collection-image-ajax-')
+	html = html.replace(/<ul class="configurable-swatch-list/, '<ul class="configurable-swatch-list-ajax')
 
 	jQuery('body').append('<div class="lightBoxWrapper"><div class="overlay"></div><div class="productViewLightBox"><span class="closeLightBox">x</span><div class="productDetail">'+html+'</div></div></div>');
 	$j(document).trigger('configurable-media-images-ajax-init', ConfigurableMediaImages);
@@ -67,6 +65,7 @@ jQuery(document).on('click', '.button.btn-ajaxcart.config', function(e){
 				jQuery('.skip-cart .count').text(response.minicart.substring(response.minicart.indexOf('<span class="count">')+20, response.minicart.substring(response.minicart.indexOf('<span class="count">'), response.minicart.length).indexOf('</span>')+response.minicart.indexOf('<span class="count">')));
 			}
 			jQuery('.lightBoxWrapper').remove();
+			$j(document).trigger('configurable-media-images-init', ConfigurableMediaImages);
 		} else if (response.status == 'ERROR'){
 			jQuery('#ajax_alert .ajax-alert-msg').text(response.message);
 		} else {
@@ -79,4 +78,5 @@ jQuery(document).on('click', '.button.btn-ajaxcart.config', function(e){
 
 jQuery(document).on('click', '.closeLightBox, .lightBoxWrapper .overlay', function(){
 	jQuery('.lightBoxWrapper').remove();
+	$j(document).trigger('configurable-media-images-init', ConfigurableMediaImages);
 });

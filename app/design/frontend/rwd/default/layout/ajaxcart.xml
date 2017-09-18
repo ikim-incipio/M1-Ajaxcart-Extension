@@ -16,10 +16,14 @@
                 <type>skin_js</type>
                 <name>ajaxcart/product-media-ajax.js</name>
             </action>
-            <!-- <action method="removeItem">
+            <action method="removeItem">
                 <type>skin_js</type>
                 <name>js/configurableswatches/swatches-list.js</name>
-            </action> -->
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>ajaxcart/swatches-list.js</name>
+            </action>
             <action method="addItem">
                 <type>skin_js</type>
                 <name>ajaxcart/swatches-list-ajax.js</name>
