@@ -35,6 +35,10 @@
 	</product_list>
 	<catalog_category_default translate="label">
 		<reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>ajaxcart/ajaxcart.css</name>
+            </action>
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>ajaxcart/ajaxcart.js</name>
@@ -75,6 +79,10 @@
 	</catalog_category_default>
 	<catalog_category_layered translate="label">
 		<reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>ajaxcart/ajaxcart.css</name>
+            </action>
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>ajaxcart/ajaxcart.js</name>
