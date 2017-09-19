@@ -1,6 +1,6 @@
 M1-Ajaxcart-Extension
 ========================
-* Ajax Add to Cart solution from category product listing
+Ajax Add to Cart solution from category product listing
 
 Features
 --------
